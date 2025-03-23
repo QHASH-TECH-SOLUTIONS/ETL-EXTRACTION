@@ -1,4 +1,15 @@
 node_modules
 extracted_images
+extracted_images/*
 output.txt
 output.csv
+
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.txt
+*.csv

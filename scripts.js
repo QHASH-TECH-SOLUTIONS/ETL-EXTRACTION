@@ -58,8 +58,8 @@ const filePath = 'output.txt';
 
 // // Example usage
 // async function main() {
-//     try {home/red
-//         await extractTextFromImages('/home/red-virus/Desktop/office/QHash/Running_Projects/pdf-extractor/images');
+//     try {
+//         await extractTextFromImages('extracted_images');
 //     } catch (error) {
 //         console.error('Main execution failed:', error);
 //     }
@@ -310,3 +310,25 @@ async function processExtractedText() {
 }
 
 processExtractedText().catch(err => console.error('Error in process:', err));
+
+async function deleteAllFilesInFolder() {
+    let folderPath = 'extracted_images';
+    try {
+        const files = await fs.readdir(folderPath);
+        if (files.length === 0) {
+            console.log(`No files found in ${folderPath}`);
+            return;
+        }
+        for (const file of files) {
+            const filePath = path.join(folderPath, file);
+            await fs.unlink(filePath);
+            console.log(`Deleted: ${filePath}`);
+        }
+        console.log(`All files in ${folderPath} have been deleted.`);
+    } catch (error) {
+        console.error(`Error deleting files in ${folderPath}:`, error.message);
+        throw error;
+    }
+}
+
+// deleteAllFilesInFolder();

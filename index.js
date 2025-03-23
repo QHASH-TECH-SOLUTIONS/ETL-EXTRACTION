@@ -50,7 +50,7 @@ async function extractImagesFromPdf(pdfPath, outputFolder) {
 }
 
 async function main() {
-    const pdfFile = path.resolve('pdfs/sample5.pdf');
+    const pdfFile = path.resolve('pdfs/sample.pdf');
     const outputDir = path.resolve('extracted_images');
     
     console.log(`Processing PDF: ${pdfFile}`);

@@ -1,5 +1,4 @@
-./node_modules
-./extracted_images
-./output.txt
-./output.csv
-
+node_modules
+extracted_images
+output.txt
+output.csv
